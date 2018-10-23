@@ -41,5 +41,8 @@
       @else <p>The Table is Empty</p>
       @endif
     </div>
+    <div class="card-footer">
+      <a href="{{ Route('user.input') }}">User Input</a>
+    </div>
   </div>
 @endsection

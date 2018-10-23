@@ -56,5 +56,8 @@
       </div>
     </div>
   </form>
+  <div class="card-footer">
+    <a href="{{ Route('result') }}">Result</a>
+  </div>
 </div>
 @endsection
