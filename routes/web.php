@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return redirect()->route('user.input');
+  return redirect()->route('result');
 });
 Route::name('user.')->group(function(){
   Route::view('/user_input', 'pages.user_input')->name('input');

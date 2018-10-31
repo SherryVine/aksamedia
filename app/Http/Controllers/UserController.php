@@ -15,6 +15,7 @@ class UserController extends Controller
 
     public function data_result(){
       $data['results'] = profile_detail::all();
-      return view('pages.result', $data);
+      $data['no'] = 0;
+      return view('pages.tables', $data);
     }
 }
