@@ -1,13 +1,18 @@
 <form method="post" action="{{ Route('user.inputPost2') }}" role="form">
   @method('put')
   @csrf
+    <ul>
+      @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+      @endforeach
+    </ul>
     <div class="form-group">
         <label>Your Name*</label>
-        <input type="text" name="name" class="form-control" placeholder="" value="" required/>
+        <input type="text" name="name" min="4" max="16" class="form-control" placeholder="" value="" required/>
     </div>
     <div class="form-group">
         <label>Your Place of Birth *</label>
-        <input type="text" name="placebirth" class="form-control" placeholder="" value="" required/>
+        <input type="text" name="placebirth" min="4" max="16" class="form-control" placeholder="" value="" required/>
     </div>
     <div class="form-group">
         <label>Your Date of Birth *</label>
@@ -28,7 +33,11 @@
     </div>
     <div class="form-group">
         <label>Your Address *</label>
-        <textarea name="address" class="form-control" placeholder="" style="width: 100%; height: 150px;" required></textarea>
+        <textarea name="address" class="form-control" placeholder="" style="width: 100%; height: 150px;" minlength="4" maxlength="64"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Your Motto *</label>
+        <textarea name="motto" class="form-control" placeholder="" style="width: 100%; height: 150px;" maxlength="128"></textarea>
     </div>
     <button type="submit" class="btn btn-default">Submit Button</button>
     <button type="reset" class="btn btn-default">Reset Button</button>

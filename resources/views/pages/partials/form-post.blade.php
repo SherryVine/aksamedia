@@ -1,10 +1,10 @@
 <form method="post" action="{{ Route('user.inputPost') }}" role="form">
   @csrf
-  <ul>
-    @foreach ($errors->all() as $error)
-      <li>{{ $error }}</li>
-    @endforeach
-  </ul>
+    <ul>
+      @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+      @endforeach
+    </ul>
     <div class="form-group">
         <label>Your Name*</label>
         <input type="text" name="name" min="4" max="16" class="form-control" placeholder="" value="" required/>
