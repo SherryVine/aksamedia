@@ -15,12 +15,13 @@ class CreateProfileDetailsTable extends Migration
     {
         Schema::create('profile_details', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 50);
-            $table->string('placebirth', 20);
+            $table->string('name', 16);
+            $table->string('placebirth', 16);
             $table->date('datebirth', 12);
             $table->char('gender', 1);
             $table->string('email');
-            $table->string('address');
+            $table->string('address', 64)->nullable();
+            $table->string('motto', 128)->nullable();
             $table->timestamps();
         });
     }

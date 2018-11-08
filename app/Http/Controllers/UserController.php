@@ -8,8 +8,25 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function user_inputPost(Request $request){
-      $data = $request->all();
-      $create = profile_detail::create($data);
+      $messages = [
+        'required' => 'Kolom :attribute wajib diisi',
+        'email' => 'Format email anda salah',
+        'min' => ':attribute minimal :min karakter',
+        'max' => ':attribute maksimal :max karakter',
+        'date' => 'Format date pada kolom :attribute salah'
+      ];
+
+      $validated = \Validator::make($request->all(), [
+        'name' => 'required|min:4|max:16',
+        'gender' => 'required',
+        'email' => 'required|email',
+        'placebirth' => 'required|min:4|max:16',
+        'datebirth' => 'required|date',
+        'address' => 'nullable|min:4|max:64',
+        'motto' => 'nullable|max:128',
+      ], $messages)->validate();
+
+      $create = profile_detail::create($validated);
       return redirect()->route('result');
     }
 

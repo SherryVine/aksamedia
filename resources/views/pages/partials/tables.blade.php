@@ -8,6 +8,7 @@
               <th>Gender</th>
               <th>Email</th>
               <th>Adress</th>
+              <th>Motto</th>
             </tr>
         </thead>
         <tbody>
@@ -20,6 +21,7 @@
               <td>{{ $data->gender }}</td>
               <td>{{ $data->email }}</td>
               <td>{{ $data->address }}</td>
+              <td>{{ $data->motto }}</td>
             </tr>
           @endforeach
         </tbody>
