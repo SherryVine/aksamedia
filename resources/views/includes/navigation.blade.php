@@ -72,18 +72,29 @@
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
                 <li>
-                  <a href="#"><i class="fa fa-keyboard-o fa-fw"></i> User Input<span class="fa arrow"></span></a>
+                  <a href="#">User's<span class="fa arrow"></span></a>
                   <ul class="nav nav-second-level">
                     <li>
-                      <a href="/user_input">User Input 1</a>
+                      <a href="{{ Route('user.input') }}"><i class="fa fa-keyboard-o fa-fw"></i> User Input Post</a>
                     </li>
                     <li>
-                      <a href="/user_input2">User Input 2</a>
+                      <a href="{{ Route('user.input2') }}"><i class="fa fa-keyboard-o fa-fw"></i> User Input Put</a>
+                    </li>
+                    <li>
+                      <a href="{{ Route('user.result') }}"><i class="fa fa-table fa-fw"></i> Result Table</a>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <a href="/data_result"><i class="fa fa-table fa-fw"></i> Tables</a>
+                  <a href="#">Product's<span class="fa arrow"></span></a>
+                  <ul class="nav nav-second-level">
+                    <li>
+                      <a href="{{ Route('product.input') }}"><i class="fa fa-keyboard-o fa-fw"></i> Product Input</a>
+                    </li>
+                    <li>
+                      <a href="{{ Route('product.result') }}"><i class="fa fa-table fa-fw"></i> Result Table</a>
+                    </li>
+                  </ul>
                 </li>
             </ul>
         </div>

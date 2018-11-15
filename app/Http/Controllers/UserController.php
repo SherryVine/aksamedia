@@ -27,12 +27,12 @@ class UserController extends Controller
       ], $messages)->validate();
 
       $create = profile_detail::create($validated);
-      return redirect()->route('result');
+      return redirect()->route('user.result');
     }
 
     public function data_result(){
       $data['results'] = profile_detail::all();
       $data['no'] = 0;
-      return view('pages.tables', $data);
+      return view('pages.table_users', $data);
     }
 }
