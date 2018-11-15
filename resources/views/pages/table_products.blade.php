@@ -9,7 +9,7 @@
 @section('panel-title', 'Data Result')
 
 @section('content')
-  @include('pages.partials.tables')
+  @include('pages.partials.table_products')
 @endsection
 
 @section('unique-js')
