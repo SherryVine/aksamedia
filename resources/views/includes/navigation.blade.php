@@ -96,6 +96,20 @@
                     </li>
                   </ul>
                 </li>
+                <li>
+                  <a href="#">Article's<span class="fa arrow"></span></a>
+                  <ul class="nav nav-second-level">
+                    <li>
+                      <a href="{{ Route('article.input') }}"><i class="fa fa-keyboard-o fa-fw"></i> Article Input</a>
+                    </li>
+                    <li>
+                      <a href="{{ Route('article.article_result') }}"><i class="fa fa-table fa-fw"></i> Article List</a>
+                    </li>
+                    <li>
+                      <a href="{{ Route('article.category_result') }}"><i class="fa fa-table fa-fw"></i> Category List</a>
+                    </li>
+                  </ul>
+                </li>
             </ul>
         </div>
         <!-- /.sidebar-collapse -->

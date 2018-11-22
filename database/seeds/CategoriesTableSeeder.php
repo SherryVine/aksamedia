@@ -11,13 +11,17 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
+      DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+      App\Category::truncate();
+      DB::statement('SET FOREIGN_KEY_CHECKS=1;');
       DB::table('categories')->insert([
-          'name' => 'Alat Mandi',
-          'description' => 'Buat membersihkan badan dari kuman jahat',
+        'name' => 'Sosial'
       ]);
       DB::table('categories')->insert([
-          'name' => 'Fashion',
-          'description' => 'Penutup tubuh',
+        'name' => 'Teknologi'
+      ]);
+      DB::table('categories')->insert([
+        'name' => 'Ekonomi'
       ]);
     }
 }
