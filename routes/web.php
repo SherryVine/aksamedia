@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-  return redirect()->route('user.result');
+  return redirect()->route('article.article_result');
 });
 
 Route::name('user.')->group(function(){
@@ -29,9 +29,16 @@ Route::name('product.')->group(function(){
   Route::get('/product/data_result', 'ProductController@data_result')->name('result');
 });
 
-Route::name('article.')->group(function(){
+Route::name('article.')->middleware('auth')->group(function(){
   Route::get('/article/input', 'ArticleController@index')->name('input');
   Route::post('/article/inputPost', 'ArticleController@article_inputPost')->name('inputPost');
   Route::get('/article/article_data', 'ArticleController@article_data')->name('article_result');
   Route::get('/article/category_data', 'ArticleController@category_data')->name('category_result');
 });
+
+Route::get('/auth/{provider}', 'Auth\LoginController@redirectToProvider');
+Route::get('/auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -59,9 +59,16 @@
             </a>
             <ul class="dropdown-menu dropdown-user">
                 <li>
-                  <a href="#" class="text-center">Nothing to Show</a>
+                  <a href="{{ route('logout') }}" class="text-center"
+                     onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                      {{ __('Logout') }}
+                  </a>
                 </li>
             </ul>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
             <!-- /.dropdown-user -->
         </li>
         <!-- /.dropdown -->
