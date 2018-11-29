@@ -5,6 +5,7 @@
           <th>Title</th>
           <th>Category</th>
           <th>Description</th>
+          <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -18,6 +19,7 @@
           @endforeach
           </td>
           <td>{{ $data->body }}</td>
+          <td><a href="{{ Route('article.update', ['id' => $data->id]) }}">Update</a> <a href="{{ Route('article.delete', ['id' => $data->id]) }}">Delete</a></td>
         </tr>
       @endforeach
     </tbody>

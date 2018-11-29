@@ -34,6 +34,9 @@ Route::name('article.')->middleware('auth')->group(function(){
   Route::post('/article/inputPost', 'ArticleController@article_inputPost')->name('inputPost');
   Route::get('/article/article_data', 'ArticleController@article_data')->name('article_result');
   Route::get('/article/category_data', 'ArticleController@category_data')->name('category_result');
+  Route::get('/article/update/{id}', 'ArticleController@update')->name('update');
+  Route::post('/article/updatePost/{id}', 'ArticleController@updatePost')->name('updatePost');
+  Route::get('/article/delete/{id}', 'ArticleController@delete')->name('delete');
 });
 
 Route::get('/auth/{provider}', 'Auth\LoginController@redirectToProvider');
